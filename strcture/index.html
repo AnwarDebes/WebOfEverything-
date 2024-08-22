@@ -16,9 +16,51 @@
     <link rel="stylesheet" href="styles/styleaLoginPage.css">
     <link rel="stylesheet" href="styles/styleaStructure.css">
 
+    <!-- external api for chatgpt -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <!-- Links to the external CSS file for styling the page -->
 </head>
 <body>
+    
+    <pre id="response"></pre>
+    <script>
+        document.getElementById('fetchDataBtn').addEventListener('click', function () {
+            const data = JSON.stringify({
+                messages: [
+                    {
+                        role: 'user',
+                        content: 'hello'
+                    }
+                ],
+                system_prompt: '',
+                temperature: 0.9,
+                top_k: 5,
+                top_p: 0.9,
+                max_tokens: 256,
+                web_access: false
+            });
+
+            const xhr = new XMLHttpRequest();
+            xhr.withCredentials = true;
+
+            xhr.addEventListener('readystatechange', function () {
+                if (this.readyState === this.DONE) {
+                    document.getElementById('response').textContent = this.responseText;
+                }
+            });
+
+            xhr.open('POST', 'https://chatgpt-42.p.rapidapi.com/conversationgpt4-2');
+            xhr.setRequestHeader('x-rapidapi-key', '6060ef268fmsh35da581f4ce8fd3p1c1f34jsndedd46713a2f');
+            xhr.setRequestHeader('x-rapidapi-host', 'chatgpt-42.p.rapidapi.com');
+            xhr.setRequestHeader('Content-Type', 'application/json');
+
+            xhr.send(data);
+        });
+    </script>
+
+
     <!-- Start of the body section where the content of the webpage is placed -->
 
     <!-- Header Section -->
