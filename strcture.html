@@ -1,9 +1,108 @@
 <!DOCTYPE html>
-<html>
+<!-- Declares the document type as HTML5 -->
+<html lang="en">
 <head>
-    <title>My HTML File</title>
+    <meta charset="UTF-8">
+    <!-- Sets the character encoding for the document to UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Ensures the page is responsive and scales properly on different devices -->
+    <title>Arabic Language Institute</title>
+    <!-- Sets the title of the page that appears in the browser tab -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Links to the external CSS file for styling the page -->
 </head>
 <body>
-    Welcome to learning arabic here with us at the Arabic Language Institute
+    <!-- Start of the body section where the content of the webpage is placed -->
+
+    <!-- Header Section -->
+    <header>
+        <!-- The header typically contains the website's main navigation and logo -->
+        <h1>Welcome to the Arabic Language Institute</h1>
+        <!-- Main title of the website -->
+
+        <!-- Navigation Bar -->
+        <nav>
+            <!-- Navigation menu for easy access to different sections of the page -->
+            <ul>
+                <!-- An unordered list to hold the navigation links -->
+                <li><a href="#home">Home</a></li>
+                <!-- Link to the Home section (uses #home to reference the section by id) -->
+                <li><a href="#courses">Courses</a></li>
+                <!-- Link to the Courses section -->
+                <li><a href="#about">About Us</a></li>
+                <!-- Link to the About Us section -->
+                <li><a href="#contact">Contact</a></li>
+                <!-- Link to the Contact section -->
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <!-- The hero section often includes a prominent heading, some descriptive text, and a call-to-action -->
+        <div class="hero-content">
+            <!-- A container div to group hero section content together -->
+            <h2>Start Your Journey to Mastering Arabic</h2>
+            <!-- Secondary heading that highlights the purpose of the website -->
+            <p>Join our immersive language programs designed for all skill levels.</p>
+            <!-- A brief description or message to engage the visitor -->
+            <a href="#courses" class="btn">Explore Courses</a>
+            <!-- A call-to-action button that links to the Courses section -->
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- The main section contains the core content of the webpage -->
+
+        <!-- Courses Section -->
+        <section id="courses">
+            <!-- A section dedicated to listing the courses offered -->
+            <h3>Our Courses</h3>
+            <!-- Tertiary heading introducing the Courses section -->
+            <p>We offer a range of courses tailored to your needs:</p>
+            <!-- A brief introductory paragraph about the courses -->
+            <ul>
+                <!-- An unordered list to display the different courses -->
+                <li>Beginner Arabic</li>
+                <!-- List item for the Beginner Arabic course -->
+                <li>Intermediate Arabic</li>
+                <!-- List item for the Intermediate Arabic course -->
+                <li>Advanced Arabic</li>
+                <!-- List item for the Advanced Arabic course -->
+            </ul>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about">
+            <!-- A section dedicated to providing information about the organization -->
+            <h3>About Us</h3>
+            <!-- Tertiary heading introducing the About Us section -->
+            <p>The Arabic Language Institute is dedicated to teaching Arabic in a friendly and supportive environment.</p>
+            <!-- A paragraph providing a brief description of the institute -->
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <!-- A section for displaying contact information -->
+            <h3>Contact Us</h3>
+            <!-- Tertiary heading introducing the Contact Us section -->
+            <p>Email: anwardebs6@gmail.com </p>
+            <!-- Contact email address -->
+            <p>Phone: +47</p>
+            <!-- Contact phone number -->
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <!-- The footer typically contains copyright information and additional links -->
+        <p>&copy; 2024 Arabic Language Institute</p>
+        <!-- Copyright notice -->
+    </footer>
+
+    <!-- JavaScript File Link -->
+    <script src="scripts/main.js"></script>
+    <!-- Link to the external JavaScript file that will add interactivity to the page -->
 </body>
 </html>
