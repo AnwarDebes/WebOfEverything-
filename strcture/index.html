@@ -1,173 +1,49 @@
 <!DOCTYPE html>
-<!-- Declares the document type as HTML5 -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <!-- Sets the character encoding for the document to UTF-8 -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Ensures the page is responsive and scales properly on different devices -->
     <title>Arabic Language Institute</title>
-    <!-- Sets the title of the page that appears in the browser tab -->
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/signInPageStyle">
-    <link rel="stylesheet" href="styles/styleaAdvancedArabicCourse.css">
-    <link rel="stylesheet" href="styles/styleaBeginnerArabicCourse.css">
-    <link rel="stylesheet" href="styles/styleaIntermediateArabicCourse.css">
-    <link rel="stylesheet" href="styles/styleaLoginPage.css">
-    <link rel="stylesheet" href="styles/styleaStructure.css">
-
-    <!-- external api for chatgpt -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Links to the external CSS file for styling the page -->
+    <!-- Ensure the path to the CSS file is correct -->
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    
-    <pre id="response"></pre>
-    <script>
-        document.getElementById('fetchDataBtn').addEventListener('click', function () {
-            const data = JSON.stringify({
-                messages: [
-                    {
-                        role: 'user',
-                        content: 'hello'
-                    }
-                ],
-                system_prompt: '',
-                temperature: 0.9,
-                top_k: 5,
-                top_p: 0.9,
-                max_tokens: 256,
-                web_access: false
-            });
-
-            const xhr = new XMLHttpRequest();
-            xhr.withCredentials = true;
-
-            xhr.addEventListener('readystatechange', function () {
-                if (this.readyState === this.DONE) {
-                    document.getElementById('response').textContent = this.responseText;
-                }
-            });
-
-            xhr.open('POST', 'https://chatgpt-42.p.rapidapi.com/conversationgpt4-2');
-            xhr.setRequestHeader('x-rapidapi-key', '6060ef268fmsh35da581f4ce8fd3p1c1f34jsndedd46713a2f');
-            xhr.setRequestHeader('x-rapidapi-host', 'chatgpt-42.p.rapidapi.com');
-            xhr.setRequestHeader('Content-Type', 'application/json');
-
-            xhr.send(data);
-        });
-    </script>
-
-
-    <!-- Start of the body section where the content of the webpage is placed -->
-
     <!-- Header Section -->
     <header>
-        <!-- The header typically contains the website's main navigation and logo -->
         <div class="header-container">
             <h1>Welcome to the Arabic Language Institute</h1>
-            <!-- Main title of the website -->
-
-            <!-- Navigation Bar -->
             <nav>
-                <!-- Navigation menu for easy access to different sections of the page -->
                 <ul>
-                    <!-- An unordered list to hold the navigation links -->
-                    <li><a href="#home">Home</a></li>
-                    <!-- Link to the Home section (uses #home to reference the section by id) -->
-                    <li><a href="#courses">Courses</a></li>
-                    <!-- Link to the Courses section -->
-                    <li><a href="#about">About Us</a></li>
-                    <!-- Link to the About Us section -->
-                    <li><a href="#contact">Contact</a></li>
-                    <!-- Link to the Contact section -->
+                    <!-- Ensure the paths to the HTML files are correct -->
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="BeginnerArabicCourse.html">Beginner Arabic</a></li>
+                    <li><a href="IntermediateArabicCourse.html">Intermediate Arabic</a></li>
+                    <li><a href="AdvancedArabicCourse.html">Advanced Arabic</a></li>
+                    <li><a href="loginPage.html">Login</a></li>
                 </ul>
             </nav>
-
-            <!-- Sign In Button -->
-            <a href="loginPage.html" class="btn-signin">Sign In</a>
-            <!-- A button linking to the login page -->
         </div>
     </header>
-
+    
     <!-- Hero Section -->
     <section id="hero">
-        <!-- The hero section often includes a prominent heading, some descriptive text, and a call-to-action -->
         <div class="hero-content">
-            <!-- A container div to group hero section content together -->
             <h2>Start Your Journey to Mastering Arabic</h2>
-            <!-- Secondary heading that highlights the purpose of the website -->
             <p>The most simple way for learning Arabic</p>
-            <!-- A brief description or message to engage the visitor -->
-            <a class="btn">Start Courses</a>
-            <!-- A call-to-action button that links to the Courses section -->
+            <a href="loginPage.html" class="btn">Start Courses</a>
         </div>
     </section>
-
-    <!-- Main Content Section -->
+    
+    <!-- Courses Section -->
     <main>
-        <!-- The main section contains the core content of the webpage -->
-        
-        <!-- Courses Section -->
         <section id="courses">
-            <!-- A section dedicated to listing the courses offered -->
             <h3>Our Courses</h3>
-            <!-- Tertiary heading introducing the Courses section -->
-            <p>We offer a range of courses tailored to your needs:</p>
-            <!-- A brief introductory paragraph about the courses -->
             <ul>
-                <!-- An unordered list to display the different courses -->
-                <li>
-                    Beginner Arabic
-                    <!-- Button to link to the Beginner Arabic course page -->
-                    <a href="BeginnerArabicCourse.html" class="btn-course">Explore Course</a>
-                </li>
-                <li>
-                    Intermediate Arabic
-                    <!-- Placeholder button for Intermediate Arabic course page -->
-                    <a href="IntermediateArabicCourse.html" class="btn-course">Explore Course</a>
-                </li>
-                <li>
-                    Advanced Arabic
-                    <!-- Placeholder button for Advanced Arabic course page -->
-                    <a href="AdvancedArabicCourse.html" class="btn-course">Explore Course</a>
-                </li>
+                <li>Beginner Arabic <a href="BeginnerArabicCourse.html" class="btn-course">Explore Course</a></li>
+                <li>Intermediate Arabic <a href="IntermediateArabicCourse.html" class="btn-course">Explore Course</a></li>
+                <li>Advanced Arabic <a href="AdvancedArabicCourse.html" class="btn-course">Explore Course</a></li>
             </ul>
         </section>
-
-        <!-- About Us Section -->
-        <section id="about">
-            <!-- A section dedicated to providing information about the organization -->
-            <h3>About Us</h3>
-            <!-- Tertiary heading introducing the About Us section -->
-            <p>The Arabic Language Institute is dedicated to teaching Arabic in a friendly and supportive environment.</p>
-            <!-- A paragraph providing a brief description of the institute -->
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact">
-            <!-- A section for displaying contact information -->
-            <h3>Contact Us</h3>
-            <!-- Tertiary heading introducing the Contact Us section -->
-            <p>Email: anwardebs6@gmail.com </p>
-            <!-- Contact email address -->
-            <p>Phone: +47</p>
-            <!-- Contact phone number -->
-        </section>
     </main>
-
-    <!-- Footer Section -->
-    <footer>
-        <!-- The footer typically contains copyright information and additional links -->
-        <p>&copy; 2024 Arabic Language Institute</p>
-        <!-- Copyright notice -->
-    </footer>
-
-    <!-- JavaScript File Link -->
-    <script src="scripts/main.js"></script>
-    <!-- Link to the external JavaScript file that will add interactivity to the page -->
-</body> 
+</body>
 </html>
-
