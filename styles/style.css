@@ -1,146 +1,205 @@
-/* Basic CSS Reset */
-/* This section resets the default margins and paddings of all elements to ensure consistent styling across browsers. 
-   The box-sizing property is set to border-box, which ensures that padding and borders are included in the element's 
-   total width and height, making layout calculations easier. */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body Styling */
-/* This section styles the body of the document. 
-   - font-family: Sets the default font for the entire document to Arial, with a fallback to sans-serif.
-   - line-height: Ensures text is easy to read by increasing the space between lines.
-   - color: Sets the default text color to a dark grey (#333).
-   - background-color: Sets the background color of the page to a light grey (#f4f4f4).
-   - padding: Adds padding on the left and right sides of the body to give some space from the browser edges. */
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #a0a4bd;
-    padding: 0 20px;
-}
-
-/* Header Styling */
-/* Styles the header section.
-   - background-color: Sets the background color of the header to dark grey (#333).
-   - color: Sets the text color within the header to white (#fff).
-   - padding: Adds padding inside the header to create space around the content.
-   - text-align: center; Centers the text within the header. */
+/* Enhanced Header Styling */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px 40px;
     text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Navigation Styling */
-/* Styles the navigation bar within the header.
-   - nav ul: Targets the unordered list (ul) inside the navigation (nav).
-     - list-style-type: none; Removes the default bullet points from the list items.
-     - display: flex; Uses Flexbox to lay out the list items horizontally.
-     - justify-content: center; Centers the navigation items within the available space.
-   - nav ul li: Styles each list item within the navigation.
-     - margin: Adds space between each list item horizontally.
-   - nav ul li a: Styles the links inside each list item.
-     - color: Sets the text color of the links to white (#fff).
-     - text-decoration: none; Removes the underline from the links.
-     - font-size: Increases the font size of the links to make them more prominent.
-   - nav ul li a:hover: Adds a hover effect to the links.
-     - text-decoration: underline; Underlines the text when the user hovers over a link. */
+/* Enhanced Navigation Styling */
 nav ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
+    margin-top: 10px;
 }
 
 nav ul li {
-    margin: 0 15px;
+    margin: 0 20px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 18px;
+    transition: color 0.3s ease;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
+    color: #00aaff;
 }
 
-/* Hero Section Styling */
-/* Styles the hero section, which typically includes a prominent image, heading, and call-to-action.
-   - background: Sets the background image for the hero section and ensures it covers the entire section 
-     (centered and scaled).
-   - height: Sets the height of the hero section to 80% of the viewport height (vh).
-   - display: flex; Uses Flexbox to align the content within the hero section.
-   - justify-content: center; Centers the content horizontally.
-   - align-items: center; Centers the content vertically.
-   - text-align: center; Centers the text within the hero section.
-   - color: Sets the text color to white (#fff) for contrast against the background image. */
+/* Add a subtle border below the header to separate it from the content */
+header {
+    border-bottom: 2px solid #00aaff;
+}
+
+/* Updated Hero Section Styling */
 #hero {
-    background: url('../images/hero-background.jpg') no-repeat center center/cover;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)), url('../images/hero-background.jpg') no-repeat center center/cover;
     height: 80vh;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: #fff;
+    color: #ffffff;
 }
 
-/* Hero Section Content Styling */
-/* Styles the text and buttons within the hero section.
-   - h2: Sets the font size and adds margin to the heading.
-     - font-size: Increases the font size of the heading for prominence.
-     - margin-bottom: Adds space below the heading.
-   - p: Styles the paragraph within the hero section.
-     - font-size: Sets the font size of the paragraph.
-     - margin-bottom: Adds space below the paragraph.
-   - .btn: Styles the call-to-action button.
-     - background-color: Sets the button background color to a light blue (#00aaff).
-     - color: Sets the button text color to white (#fff).
-     - padding: Adds padding inside the button for a better click target.
-     - text-decoration: none; Removes the underline from the button text.
-     - font-size: Sets the font size of the button text.
-     - border-radius: Rounds the corners of the button.
-   - .btn:hover: Adds a hover effect to the button.
-     - background-color: Darkens the button background color when the user hovers over it. */
 #hero .hero-content h2 {
     font-size: 48px;
     margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 #hero .hero-content p {
-    font-size: 20px;
-    margin-bottom: 40px;
+    font-size: 22px;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 #hero .btn {
     background-color: #00aaff;
-    color: #fff;
-    padding: 10px 20px;
+    color: #ffffff;
+    padding: 12px 24px;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 20px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
 
 #hero .btn:hover {
     background-color: #0088cc;
 }
 
-/* Footer Styling */
-/* Styles the footer section.
-   - background-color: Sets the background color of the footer to dark grey (#333).
-   - color: Sets the text color in the footer to white (#fff).
-   - padding: Adds padding inside the footer to create space around the content.
-   - text-align: center; Centers the text within the footer.
-   - margin-top: Adds space above the footer to separate it from the content above. */
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+/* Main Content Section Styling */
+main {
+    padding: 40px 20px;
+}
+
+/* Courses Section Styling */
+#courses h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333333;
     text-align: center;
-    margin-top: 40px;
+}
+
+#courses ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#courses li {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 10px;
+    border-left: 5px solid #00aaff;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+#courses li:hover {
+    transform: translateX(10px);
+}
+
+/* About Us Section Styling */
+#about h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+#about p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contact Section Styling */
+#contact h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333333;
+    text-align: center;
+}
+
+#contact p {
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+#contact p a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+#contact p a:hover {
+    text-decoration: underline;
+}
+
+/* Enhanced Footer Styling */
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    border-top: 2px solid #00aaff;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 16px;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+    /* Adjust Header and Navigation for Mobile */
+    header {
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Adjust Hero Section for Mobile */
+    #hero {
+        height: 60vh;
+    }
+
+    #hero .hero-content h2 {
+        font-size: 36px;
+    }
+
+    #hero .hero-content p {
+        font-size: 18px;
+    }
+
+    /* Adjust Main Content for Mobile */
+    main {
+        padding: 20px;
+    }
+
+    #courses ul {
+        padding-left: 0;
+    }
+
+    #courses li {
+        margin-bottom: 15px;
+    }
 }
