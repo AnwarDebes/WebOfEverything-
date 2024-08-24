@@ -3,25 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/style.css"> <!-- Connecting the css with this side  -->
-    <div id="resultsDiv"></div>
-    <title>Search Books</title>
+    <title>Search for Books</title>
+    <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
-    <h1>Search for Books</h1>
-
     <!-- Search Section -->
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Search for books...">
-        <button id="search-button">Search</button>
-    </div>
+    <section id="search-section">
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for a book..." class="search-input">
+            <button id="search-button" class="btn">Search</button>
+        </div>
+    </section>
 
     <!-- Results Section -->
-    <div id="results-section" style="display: none;">
+    <section id="results-section" style="display: none;">
         <h3>Search Results</h3>
-        <div id="resultsDiv" class="results"></div>
-    </div>
+        <div id="resultsDiv" class="results-container"></div>
+    </section>
 
-    <script src="../scripts/main.js"></script> <!-- Link to JavaScript -->
+    <script src="../scripts/main.js"></script>
 </body>
 </html>
