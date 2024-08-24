@@ -17,38 +17,43 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-     // Fetch book information from the Open Library API
-     async function getBookInfo(query) {
+    // Fetch book information from the Open Library API
+    async function getBookInfo(query) {
         const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}`;
-        try {
-            const response = await fetch(url); // Await the response from the API
-            const data = await response.json(); // Parse JSON data
-            console.log(data); // Log the data to check its structure
-            if (data.docs && data.docs.length > 0) {
-                displayBookInfo(data.docs); // Display books if data is found
-            } else {
-                displayError("No results found for the search term.");
-            }
-        } catch (error) {
-            displayError("Error fetching data from the API.");
-            console.error('Error fetching data:', error);
-        }
+        const response = await fetch (url);
+        fetch(url)
+            .then(response => {
+                console.log(response); // Check the response status and headers
+                return response.json();
+            })
+            .then(data => {
+                console.log(data); // Log the data to ensure you received the response
+                if (data.docs && data.docs.length > 0) {
+                    displayBookInfo(data.docs); // Pass the books data to display function
+                } else {
+                    displayError("No results found for the search term.");
+                }
+            })
+            .catch(error => {
+                displayError("Error fetching data from the API.");
+                console.error('Error fetching data:', error);
+            });
     }
-    // Display book information on the page
- 
+
+
     // Display book information on the page
     function displayBookInfo(books) {
+       // const {}
         resultsDiv.innerHTML = ''; // Clear previous results
-        resultsDiv.style.display = 'block'; // Ensure the results section is visible
+        resultsSection.style.display = 'block'; // Show the results section
 
         books.forEach(book => {
             if (book.cover_i) { // Only process books with a cover image
                 const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
-                const imgElement = document.createElement('img');
+                const imgElement = document.createElement('.img');
                 imgElement.src = imgUrl;
                 imgElement.alt = book.title;
                 imgElement.title = book.title;
-                imgElement.classList.add('book-cover'); // Add a class for styling
 
                 const titleElement = document.createElement('p');
                 titleElement.textContent = book.title;
