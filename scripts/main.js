@@ -41,51 +41,44 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 
-    // Display book information on the page
-    function displayBookInfo(books) {
-       // const {}
-        resultsDiv.innerHTML = ''; // Clear previous results
-        resultsSection.style.display = 'block'; // Show the results section
+    // Function to display book information on the page
+function displayBookInfo(books) {
+    resultsDiv.innerHTML = ''; // Clear previous results
+    resultsSection.style.display = 'block'; // Show the results section
 
-        books.forEach(book => {
-            if (book.cover_i) { // Only process books with a cover image
-                const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
-                const imgElement = document.createElement('.img');
-                imgElement.src = imgUrl;
-                imgElement.alt = book.title;
-                imgElement.title = book.title;
+    books.forEach(book => {
+        if (book.cover_i) { // Only process books with a cover image
+            const imgUrl = `https://covers.openlibrary.org/b/id/${book.cover_i}-L.jpg`;
+            const imgElement = document.createElement('img'); // Corrected from '.img' to 'img'
+            imgElement.src = imgUrl;
+            imgElement.alt = book.title;
+            imgElement.title = book.title;
 
-                const titleElement = document.createElement('p');
-                titleElement.textContent = book.title;
+            const titleElement = document.createElement('p');
+            titleElement.textContent = book.title;
 
-                const authorElement = document.createElement('p');
-                authorElement.textContent = `Author: ${book.author_name ? book.author_name.join(', ') : 'Unknown'}`;
+            const authorElement = document.createElement('p');
+            authorElement.textContent = `Author: ${book.author_name ? book.author_name.join(', ') : 'Unknown'}`;
 
-                const bookContainer = document.createElement('div');
-                bookContainer.classList.add('book-container');
-                bookContainer.appendChild(imgElement);
-                bookContainer.appendChild(titleElement);
-                bookContainer.appendChild(authorElement);
+            const bookContainer = document.createElement('div');
+            bookContainer.classList.add('book-container');
+            bookContainer.appendChild(imgElement);
+            bookContainer.appendChild(titleElement);
+            bookContainer.appendChild(authorElement);
 
-                resultsDiv.appendChild(bookContainer); // Add the book container to results section
-            }
-        });
-    }
+            resultsDiv.appendChild(bookContainer);
+        }
+    });
+}
 
-    // Display book information based on the json format given in the response body of the API
-    function showBookInfo(book){
+    // Function to display error messages
+function displayError(message) {
+    resultsDiv.innerHTML = ''; // Clear previous results
+    resultsSection.style.display = 'block'; // Ensure the results section is visible
+    const errorElement = document.createElement('p');
+    errorElement.textContent = message;
+    errorElement.classList.add('error-message');
+    resultsDiv.appendChild(errorElement);
+}
 
-    }
-
-    // Display an error message if something goes wrong
-    function displayError(message) {
-        resultsDiv.innerHTML = ''; // Clear previous results
-        response.style.displayBookInfo = 'block'; // Show the results section
-
-        const errorElement = document.createElement('p');
-        errorElement.textContent = message;
-        errorElement.style.color = 'red';
-        errorElement.style.textAlign = 'center';
-        resultsDiv.appendChild(errorElement); // Display the error message
-    }
 });
