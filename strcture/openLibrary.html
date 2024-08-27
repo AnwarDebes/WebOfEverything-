@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,6 +9,16 @@
     <link rel="stylesheet" href="../styles/style.css">
 </head>
 <body>
+      <!-- Dropdown Section for translation  -->
+      <nav>
+        <section id = "droppdown-section">
+            <select id="search-dropdown" class="search-dropdown">
+                <option value="title">Arabic</option>
+                <option value="author">Spanish</option>
+                <option value="subject">Norwagain</option>
+            </select>
+        </nav>
+    </section>
     <!-- Search Section -->
     <section id="search-section">
         <div class="search-container">
@@ -14,13 +26,11 @@
             <button id="search-button" class="btn">Search</button>
         </div>
     </section>
-
     <!-- Results Section -->
     <section id="results-section" style="display: none;">
         <h3>Search Results</h3>
         <div id="resultsDiv" class="results-container"></div>
     </section>
-
     <script src="../scripts/main.js"></script>
 </body>
 </html>
