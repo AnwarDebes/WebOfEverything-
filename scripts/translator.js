@@ -10,4 +10,4 @@ function translatorErrorHandler (){
 }
 // https://apertium.org/apy/translate?langpair=en|es&q=Hello+world
 // this is the endpoint we are going to use to translate the text
-
+ 
