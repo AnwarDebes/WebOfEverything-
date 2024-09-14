@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function () {
     const searchInput = document.getElementById('search-input');
 
     // Trigger book search when "Search" button is clicked
-    searchButton.addEventListener('click', function () {
+    searchButton.addEventListener('click', async function () {
         const searchTerm = searchInput.value;
         if (searchTerm) {
-            getBookInfo(searchTerm);
+           await getBookInfo(searchTerm);
         } else {
             displayError("Please enter the title of the book you want to search.");
         }
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.error('Error fetching data:', error);
         }
     }
-    
+
     // Function to display book information on the page
     async function displayBookInfo(books) {
         resultsDiv.innerHTML = ''; // Clear previous results
